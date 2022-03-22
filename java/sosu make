@@ -1,0 +1,34 @@
+class Solution {
+	public int solution(int[] nums) {
+		int answer = 0;
+		int h = 0;
+		int jk = 0;
+		for (int i = 0; i < nums.length; i++) {
+			if (i + 2 == nums.length) {
+				break;
+			}
+			for (int j = i + 1; j < nums.length; j++) {
+				for (int k = j + 1; k < nums.length; k++) {
+					h = nums[i] + nums[j] + nums[k];
+					// System.out.println(h);
+					for (int l = 2; l < h; l++) {
+						if (h % l == 0) {
+							System.out.println(h);
+							break;
+						}
+						if (h - 1 == l) {
+							answer++;
+
+						}
+
+					}
+
+				}
+			}
+		}
+
+		System.out.println(answer);
+		return answer;
+	}
+
+}
