@@ -1,0 +1,35 @@
+class Solution {
+	
+    public int solution(int n) {
+    	int answer=0;
+    	String k;
+    	int cnt=0;
+    	int cnt2=0;
+    	k=Integer.toBinaryString(n);
+    	for(int i=0; i<k.length();i++)
+    	{
+    		if(k.charAt(i)=='1')
+    		{
+    			cnt++;
+    		}
+    	}
+    	while(true)
+    	{
+    		cnt2=0;
+    		n++;
+    		k=Integer.toBinaryString(n);
+    		for(int i=0;i<k.length();i++)
+    		{
+    			if(k.charAt(i)=='1')
+    			{
+    				cnt2++;
+    			}
+    		}
+
+    		if(cnt ==cnt2)
+    			{break;}
+    	}
+    	answer=n;
+    	return answer;
+    }
+}
