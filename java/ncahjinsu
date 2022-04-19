@@ -1,0 +1,25 @@
+	public String solution(int n, int t, int m, int p) {
+		StringBuffer dap= new StringBuffer(); 
+		String answer="";
+		StringBuffer answer2=new StringBuffer();
+		
+		int cnt=0;
+		for(int i=0; i<t*m;i++)
+		{	
+			dap.append(String.valueOf(Integer.toString(i,n)));
+		}
+		for(int i=0; i<dap.length();i++)
+		{
+			if(i*m+p-1>=dap.length())
+			{
+				break;
+			}
+			answer2.append(dap.charAt(i*m+p-1));
+			
+			
+		}
+		answer2.delete(t, answer2.length());
+		answer=answer2.toString();
+		answer=answer.toUpperCase();
+		return answer;
+	}
