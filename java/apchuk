@@ -1,0 +1,27 @@
+import java.util.*;
+public class Solution {
+	public int[] solution(int[] progresses, int[] speeds) {
+		Queue<Integer> pro = new LinkedList<Integer>();
+		List<Integer> answer2 = new ArrayList<>();
+	
+		for (int i = 0; i <progresses.length ; i++) {
+			pro.add((int) (Math.ceil((100.0 - progresses[i]) / speeds[i])));
+		}
+		while (!pro.isEmpty()) {
+			int cnt = 1;
+			int a = pro.poll();
+			while (!pro.isEmpty() && a >= pro.peek()) {
+				cnt++;
+				pro.poll();
+			}
+			answer2.add(cnt);
+			System.out.println(answer2);
+		}
+		System.out.println(answer2);
+		int [] answer = new int[answer2.size()];
+		for (int i = 0; i < answer2.size(); i++) {
+			answer[i] = answer2.get(i);
+		}
+		return answer;
+	}
+}
